@@ -10,3 +10,7 @@ aws:
     certPath:  /Users/love.bisaria/.ssh/amazon_ftp
     certPass: lbisaria
     remotePath:  /leo-dev-bucket
+
+  sqs:
+    queue:
+      name: file-upload-job-queue-dev-leo

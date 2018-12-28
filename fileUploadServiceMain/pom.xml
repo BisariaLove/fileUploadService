@@ -15,6 +15,14 @@
   </parent>
 
   <dependencies>
+
+    <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sqs -->
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-sqs</artifactId>
+      <version>1.11.475</version>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
     <dependency>
       <groupId>com.jcraft</groupId>

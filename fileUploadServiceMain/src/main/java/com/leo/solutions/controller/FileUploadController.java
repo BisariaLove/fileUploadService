@@ -6,6 +6,8 @@ package com.leo.solutions.controller;
 
 import com.leo.solutions.domain.FileQueuedResponse;
 import com.leo.solutions.service.FileUploadService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +18,8 @@ import javax.inject.Inject;
 @RestController
 @RequestMapping("/file")
 public class FileUploadController {
+
+    private static final Logger log = LoggerFactory.getLogger(FileUploadController.class);
 
     @Inject
     FileUploadService fileUploadService;
