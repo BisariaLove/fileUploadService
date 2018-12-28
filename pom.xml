@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.leo.solutions</groupId>
+  <artifactId>fileUploadService</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>File upload service</name>
+  <description>File upload service</description>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.3.1.RELEASE</version>
+  </parent>
+
+  <scm>
+    <connection>scm:git:https://host/path</connection>
+    <developerConnection>scm:git:https://host/path</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <!-- Jacoco -->
+    <jacoco.out.it.file>jacoco-it.exec</jacoco.out.it.file>
+    <jacoco.out.file>jacoco.exec</jacoco.out.file>
+    <jacoco.out.path>${project.basedir}/../target/</jacoco.out.path>
+    <min.branch.coverage>0</min.branch.coverage>
+    <min.line.coverage>0</min.line.coverage>
+
+    <!-- Sonar -->
+    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+    <sonar.jacoco.itReportPath>${jacoco.out.path}${jacoco.out.it.file}</sonar.jacoco.itReportPath>
+    <sonar.jacoco.reportPath>${jacoco.out.path}${jacoco.out.file}</sonar.jacoco.reportPath>
+    <sonar.language>java</sonar.language>
+  </properties>
+
+
+ <dependencyManagement>
+
+   <dependencies>
+
+
+
+   </dependencies>
+
+ </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.2</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <modules>
+    <module>fileUploadServiceMain</module>
+    <module>fileUploadServiceWorker</module>
+  </modules>
+
+  <!-- Defines repository information for distribution. -->
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <name>Release Repository</name>
+      <url>http://maven.platform.tm.tmcs:8081/nexus/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>Snapshot Repository</name>
+      <url>http://maven.platform.tm.tmcs:8081/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>releases</id>
+      <url>http://maven.platform.tm.tmcs:8081/nexus/content/repositories/releases/</url>
+    </repository>
+    <repository>
+      <id>public</id>
+      <url>http://maven.platform.tm.tmcs:8081/nexus/content/groups/public/</url>
+    </repository>
+  </repositories>
+
+</project>
