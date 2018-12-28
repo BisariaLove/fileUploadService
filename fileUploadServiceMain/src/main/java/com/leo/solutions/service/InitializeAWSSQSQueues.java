@@ -25,13 +25,17 @@ public class InitializeAWSSQSQueues implements InitializingBean {
 
         AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
 
-        log.info("Creating queue: {}", queueName);
-        CreateQueueRequest create_request = new CreateQueueRequest(queueName)
+        final CreateQueueRequest createQueueRequest = new CreateQueueRequest(queueName)
                 .addAttributesEntry("DelaySeconds", "60")
                 .addAttributesEntry("MessageRetentionPeriod", "86400");
 
+
+        log.info("Created queue: {}", queueName);
+
         try {
-            sqs.createQueue(create_request);
+            final String myQueueUrl = sqs.createQueue(createQueueRequest)
+                    .getQueueUrl();
+            log.info("Queue : {}", myQueueUrl);
         } catch (AmazonSQSException e) {
             if (e.getErrorCode().equals("QueueAlreadyExists")) {
                 log.info("[{}] : already exists.", queueName);
