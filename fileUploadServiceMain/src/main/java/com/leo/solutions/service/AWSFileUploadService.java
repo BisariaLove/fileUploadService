@@ -49,13 +49,13 @@ public class AWSFileUploadService implements FileUploadService {
             channel = session.openChannel("sftp");
             channel.connect();
 
-            System.out.println("shell channel connected....");
+            log.info("shell channel connected....");
 
             channelSftp = (ChannelSftp) channel;
 
-            System.out.println("Starting File Upload....");
+            log.info("Starting File Upload....");
             channelSftp.put(localFilePath + "/" + localFileName, ftpServerConfig.getRemotePath());
-            System.out.println("File Uploaded success....");
+            log.info("File Uploaded success....");
 
 
         } catch(JSchException | SftpException e){
