@@ -17,6 +17,12 @@
 
   <dependencies>
 
+    <dependency>
+      <groupId>com.leo.solutions</groupId>
+      <artifactId>fileUploadServiceCommon</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/javax.jms/jms -->
     <dependency>
       <groupId>javax.jms</groupId>

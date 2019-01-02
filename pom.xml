@@ -61,6 +61,7 @@
   <modules>
     <module>fileUploadServiceMain</module>
     <module>fileUploadServiceWorker</module>
+    <module>fileUploadServiceCommon</module>
   </modules>
 
   <!-- Defines repository information for distribution. -->
